@@ -1,4 +1,5 @@
 
+require 'active_record'
 require 'activerecord-raw-data/version'
 
 module ActiveRecord
