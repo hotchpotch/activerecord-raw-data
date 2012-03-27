@@ -25,7 +25,7 @@ Or install it yourself as:
     User.raw_data #=> [{"id" => 1, "name" => "alice"}, {"id" => 2, "name" => "bob"}, ...]
     User.raw_rows #=> [[1, "alice"], [2, "bob"], ...]
     # raw_values like ActiveRecord::Base.pluck. if your AR support, should use pluck.
-    User.select(:name).raw_values #=> ["alice", "bob, ...]
+    User.select(:name).raw_values #=> ["alice", "bob", ...]
 
 ## Contributing
 
