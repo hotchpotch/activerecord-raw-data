@@ -20,6 +20,10 @@ module ActiveRecord
       def raw_values
         connection.select_values scoped.to_sql
       end
+
+      def raw_data_by_sql(sql)
+        connection.select_all sanitize_sql(sql)
+      end
     end
   end
 end
