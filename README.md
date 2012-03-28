@@ -22,10 +22,18 @@ Or install it yourself as:
 
 ## Usage
 
-    User.raw_data #=> [{"id" => 1, "name" => "alice"}, {"id" => 2, "name" => "bob"}, ...]
-    User.raw_rows #=> [[1, "alice"], [2, "bob"], ...]
+    User.raw_data
+    #=> [{"id" => 1, "name" => "alice"}, {"id" => 2, "name" => "bob"}, ...]
+
+    User.raw_rows
+    #=> [[1, "alice"], [2, "bob"], ...]
+
     # raw_values like ActiveRecord::Base.pluck. if your AR support, should use pluck.
-    User.select(:name).raw_values #=> ["alice", "bob", ...]
+    User.select(:name).raw_values
+    #=> ["alice", "bob", ...]
+
+    User.raw_data_by_sql('SELECT SUBSTR(name, 1, 1) AS initial FROM users ORDER BY users.name DESC')
+    #=> [{"initial" => "c"}, {"initial" => "b"}, ...]
 
 ## Contributing
 
@@ -34,3 +42,7 @@ Or install it yourself as:
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Author
+
+Yuichi Tateno
