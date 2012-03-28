@@ -55,9 +55,9 @@ describe ActiveRecord::RawData do
 
   it "should result raw values with complex sql" do
     User.raw_data_by_sql('SELECT SUBSTR(name, 1, 1) AS initial FROM users ORDER BY users.name DESC').should eq [
-      {"initial"=>"c"},
-      {"initial"=>"b"},
-      {"initial"=>"a"}
+      {"initial" => "c"},
+      {"initial" => "b"},
+      {"initial" => "a"}
     ]
   end
 end
