@@ -1,4 +1,3 @@
-
 require 'active_record'
 require 'activerecord-raw-data/version'
 require 'activerecord-raw-data/compatibility_adapter'
