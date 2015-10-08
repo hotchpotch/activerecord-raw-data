@@ -14,9 +14,9 @@ describe ActiveRecord::RawData do
 
   it "should result raw data" do
     User.raw_data.should eq [
-      {"id"=>1, "name"=>"alice", "mail"=>"alice@example.com"},
-      {"id"=>2, "name"=>"bob", "mail"=>"bob@example.com"},
-      {"id"=>3, "name"=>"carol", "mail"=>"carol@example.com"}
+      {"id"=> alice.id, "name"=>"alice", "mail"=>"alice@example.com"},
+      {"id"=> bob.id,   "name"=>"bob", "mail"=>"bob@example.com"},
+      {"id"=> carol.id, "name"=>"carol", "mail"=>"carol@example.com"}
     ]
   end
 
@@ -30,9 +30,9 @@ describe ActiveRecord::RawData do
 
   it "should result raw rows" do
     User.raw_rows.should eq [
-      [1, "alice", "alice@example.com"],
-      [2, "bob", "bob@example.com"],
-      [3, "carol", "carol@example.com"]
+      [alice.id, "alice", "alice@example.com"],
+      [bob.id,   "bob",   "bob@example.com"],
+      [carol.id, "carol", "carol@example.com"]
     ]
   end
 
@@ -44,9 +44,8 @@ describe ActiveRecord::RawData do
     ]
   end
 
-
   it "should result raw values" do
-    User.raw_values.should eq [1, 2, 3]
+    User.raw_values.should eq [alice.id, bob.id, carol.id]
   end
 
   it "should result raw values with select" do
