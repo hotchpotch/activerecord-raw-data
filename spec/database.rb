@@ -5,7 +5,7 @@ require 'pathname'
 tmp_dir =  Pathname.new(__FILE__).parent.parent.join('tmp')
 tmp_dir.mkpath
 ::ActiveRecord::Base.configurations = {'test' => {:adapter => 'sqlite3', :database => tmp_dir.join("test.db").to_s}}
-::ActiveRecord::Base.establish_connection('test')
+::ActiveRecord::Base.establish_connection(:test)
 
 class User < ::ActiveRecord::Base
   class Migration < ::ActiveRecord::Migration
